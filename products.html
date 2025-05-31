@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Купить солнцезащитные средства SunGuard с SPF защитой">
+    <title>Товары - SunGuard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Удаляем активный класс у всех кнопок
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Добавляем активный класс текущей кнопке
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Фильтрация товаров
+                    productCards.forEach(card => {
+                        if (filterValue === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            if (card.getAttribute('data-category') === filterValue) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <h1>SunGuard</h1>
+                    <p class="slogan">Защита, которой можно доверять!</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="products.html" class="active"><i class="fas fa-sun"></i> Товары</a></li>
+                    <li><a href="index.html#about"><i class="fas fa-info-circle"></i> О нас</a></li>
+                    <li><a href="index.html#contacts"><i class="fas fa-phone-alt"></i> Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="products-hero">
+            <div class="container">
+                <h1>Наши товары</h1>
+                <p>Выберите оптимальную защиту для вашего типа кожи</p>
+            </div>
+        </section>
+
+        <section class="products-filter">
+            <div class="container">
+                <div class="filter-options">
+                    <button class="filter-btn active" data-filter="all">Все товары</button>
+                    <button class="filter-btn" data-filter="face">Для лица</button>
+                    <button class="filter-btn" data-filter="body">Для тела</button>
+                    <button class="filter-btn" data-filter="kids">Детские</button>
+                    <button class="filter-btn" data-filter="sport">Спортивные</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-container">
+            <div class="container">
+                <div class="products-grid">
+                    <div class="product-card" data-category="face" id="face-spf30">
+                        <div class="product-image">
+                            <img src="spf 30.jpg" alt="SPF 30 для лица">
+                            <div class="product-badge">Для лица</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Face SPF 30</h3>
+                            <p>Нежирный крем для ежедневного ухода за лицом</p>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(124 отзыва)</span>
+                            </div>
+                            <div class="product-price">1200 руб.</div>
+                            <button class="btn btn-primary">Купить</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="face" id="face-spf50">
+                        <div class="product-image">
+                            <img src="spf 50.jpg" alt="SPF 50 для лица">
+                            <div class="product-badge">Для лица</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Face SPF 50</h3>
+                            <p>Интенсивная защита для чувствительной кожи лица</p>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(98 отзывов)</span>
+                            </div>
+                            <div class="product-price">1500 руб.</div>
+                            <button class="btn btn-primary">Купить</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="body" id="body-spf30">
+                        <div class="product-image">
+                            <img src="body spf 30.jpg" alt="SPF 30 для тела">
+                            <div class="product-badge">Для тела</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Body SPF 30</h3>
+                            <p>Увлажняющий крем для всего тела</p>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(87 отзывов)</span>
+                            </div>
+                            <div class="product-price">1100 руб.</div>
+                            <button class="btn btn-primary">Купить</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="body" id="body-spf50">
+                        <div class="product-image">
+                            <img src="body spf 50.jpg" alt="SPF 50 для тела">
+                            <div class="product-badge">Для тела</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Body SPF 50</h3>
+                            <p>Мощная защита для всего тела</p>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(156 отзывов)</span>
+                            </div>
+                            <div class="product-price">1400 руб.</div>
+                            <button class="btn btn-primary">Купить</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="kids" id="kids-spf50">
+                        <div class="product-image">
+                            <img src="baby spf 50.jpg" alt="Детский SPF 50">
+                            <div class="product-badge">Детский</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Kids SPF 50</h3>
+                            <p>Специально для нежной детской кожи</p>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(189 отзывов)</span>
+                            </div>
+                            <div class="product-price">1800 руб.</div>
+                            <button class="btn btn-primary">Купить</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="sport" id="sport-spf50">
+                        <div class="product-image">
+                            <img src="sport spf 50.jpg" alt="Спортивный SPF 50">
+                            <div class="product-badge">Спортивный</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Sport SPF 50</h3>
+                            <p>Водостойкая формула для активного отдыха</p>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(97 отзывов)</span>
+                            </div>
+                            <div class="product-price">1600 руб.</div>
+                            <button class="btn btn-primary">Купить</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="sport" id="sport-spray">
+                        <div class="product-image">
+                            <img src="spray spf 30.jpg" alt="Спортивный спрей SPF 30">
+                            <div class="product-badge">Спортивный</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Sport Spray SPF 30</h3>
+                            <p>Удобный спрей для быстрого нанесения</p>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(76 отзывов)</span>
+                            </div>
+                            <div class="product-price">1400 руб.</div>
+                            <button class="btn btn-primary">Купить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-benefits">
+            <div class="container">
+                <h2 class="section-title">Преимущества SunGuard</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Натуральные компоненты</h3>
+                        <p>Используем только безопасные и экологичные ингредиенты</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-flask"></i>
+                        <h3>Научный подход</h3>
+                        <p>Разрабатываем формулы совместно с ведущими дерматологами</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-award"></i>
+                        <h3>Гарантия качества</h3>
+                        <p>Вся продукция проходит строгий контроль качества</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Санкт-Петербург, пр. Королёва, 15</p>
+                    <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@sunguard.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Полезные ссылки</h3>
+                    <ul>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Возврат и обмен</a></li>
+                        <li><a href="#">Публичная оферта</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Подписаться на новости</h3>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Ваш email">
+                        <button type="submit">Подписаться</button>
+                    </form>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SunGuard. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
